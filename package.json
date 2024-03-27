@@ -1,0 +1,35 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "nodemon",
+    "dev:test": "nodemon ./dist/index.js",
+    "build": "node build.js && npx vite build --mode client",
+    "clean": "rimraf dist && rimraf public/static",
+    "build:test": "vite build && vite build --mode client",
+    "build:css": "npx tailwindcss -i ./src/main.css -o ./public/static/main.css",
+    "watch": "npx vite build --mode client --watch",
+    "test": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "@fastify/static": "^7.0.0",
+    "axios": "^1.6.5",
+    "dotenv": "^16.4.5",
+    "esm": "^3.2.25",
+    "fastify": "^4.26.0",
+    "nodemon": "^3.0.3",
+    "preact": "^10.19.6",
+    "preact-router": "^4.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.8.1",
+    "@types/node": "^18.14.6",
+    "@types/react": "^18.2.23",
+    "@types/react-dom": "^18.2.8",
+    "rimraf": "^3.0.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
+  }
+}
